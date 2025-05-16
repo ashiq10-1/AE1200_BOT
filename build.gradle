@@ -18,7 +18,14 @@ java {
 
 repositories {
     mavenCentral()
+    maven {
+        url = uri("https://download.java.net/java/GA/")
+    }
+    maven {
+        url = uri("https://api.adoptium.net/v3/binary/latest/")
+    }
 }
+
 
 toolchainManagement {
     repositories {
