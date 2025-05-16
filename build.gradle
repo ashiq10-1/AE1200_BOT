@@ -10,34 +10,13 @@ version = '0.0.1-SNAPSHOT'
 
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(21)
-        vendor = JvmVendorSpec.AMAZON
-        implementation = JvmImplementation.VENDOR_SPECIFIC
+        languageVersion = JavaLanguageVersion.of(17)
     }
 }
 
 repositories {
     mavenCentral()
-    maven {
-        url = uri("https://download.java.net/java/GA/")
-    }
-    maven {
-        url = uri("https://api.adoptium.net/v3/binary/latest/")
-    }
 }
-
-
-toolchainManagement {
-    repositories {
-        jdkRepo {
-            uri = uri("https://download.oracle.com/java/GA/")
-        }
-        jdkRepo {
-            uri = uri("https://api.adoptium.net/v3/binary/latest/")
-        }
-    }
-}
-
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter'
