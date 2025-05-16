@@ -18,10 +18,19 @@ java {
 
 repositories {
     mavenCentral()
-    maven {
-        url = uri("https://download.java.net/java/GA/")
+}
+
+toolchainManagement {
+    repositories {
+        jdkRepo {
+            uri = uri("https://download.oracle.com/java/GA/")
+        }
+        jdkRepo {
+            uri = uri("https://api.adoptium.net/v3/binary/latest/")
+        }
     }
 }
+
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter'
